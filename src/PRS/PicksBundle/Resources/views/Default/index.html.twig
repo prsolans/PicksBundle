@@ -9,8 +9,6 @@ Content block.
 {% endblock %}
 
 {% block sidebar %}
-
-
 {% if is_granted('ROLE_ADMIN') %}
 <h4>Admin</h4>
 <p><a href='{{ path('admin_user') }}'>All users</a></p>

@@ -1,1 +1,23 @@
-Hello {{ name }}!
+{% extends ('::base.html.twig') %}
+
+{% block header %}
+<h2>PicksBundle: Displays predictions for sports events using Symfony2</h2><hr/>
+{% endblock %}
+
+{% block content %}
+Content block.
+{% endblock %}
+
+{% block sidebar %}
+
+
+{% if is_granted('ROLE_ADMIN') %}
+<h4>Admin</h4>
+<p><a href='{{ path('admin_user') }}'>All users</a></p>
+<p><a href='{{ path('fos_user_security_logout') }}'>Logout</a></p>
+</p>
+{% else %}
+{% render controller('PRSPicksBundle:Security:login') %}
+{% endif %}
+
+{% endblock %}
